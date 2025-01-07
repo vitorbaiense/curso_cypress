@@ -1,0 +1,14 @@
+# Ignorar dependências
+node_modules/
+
+# Ignorar arquivos de execução
+cypress/screenshots/
+cypress/videos/
+
+# Ignorar arquivos de ambiente locais
+cypress.env.json
+.env
+
+# Ignorar relatórios
+cypress/results/
+*.log
