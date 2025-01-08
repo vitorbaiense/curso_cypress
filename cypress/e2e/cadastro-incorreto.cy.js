@@ -1,7 +1,10 @@
 describe('Página de cadastro do ADOPET', () => {
-    it('Preencher os campos do formulário incorretamente e exibir mensagens ao usuário', () => {
+    beforeEach(() =>{
       cy.visit('https://adopet-frontend-cypress.vercel.app/');
-      cy.contains('a', 'Cadastrar').click();
+      cy.get('[data-test="register-button"]').click();
+    })
+
+    it('Preencher os campos do formulário incorretamente e exibir mensagens ao usuário', () => {
     //   cy.get('input[name="nome"]').type('vitor baiense');
     //   cy.get('input[name="email"]').type('vitorbaiense@gmail.com');
     //   cy.get('input[name="password"]').type('Vitor1234');

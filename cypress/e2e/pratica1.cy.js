@@ -1,7 +1,10 @@
 describe('acessando diferentes páginas do ADOPET', () => {
-    it('Deve acessar a página inicial e cliclar no botão "Ver pets disponíveis para adoção”, Visite a página de principal do AdoPet e teste os botões header, Visite a página de /login do Adopet, Visite a página de /home do Adopet, Visite a página de /home do AdoPet e clique no botão “Falar com o responsável”', () => {
+    beforeEach(() => {
       cy.visit('https://adopet-frontend-cypress.vercel.app/');
       cy.contains('a', 'Ver pets disponíveis para adoção').click();
+    });
+
+    it('Deve acessar a página inicial e cliclar no botão "Ver pets disponíveis para adoção”, Visite a página de principal do AdoPet e teste os botões header, Visite a página de /login do Adopet, Visite a página de /home do Adopet, Visite a página de /home do AdoPet e clique no botão “Falar com o responsável”', () => {
       cy.wait(2000);
       cy.get('a[href="/"]').click();
       cy.wait(2000);
