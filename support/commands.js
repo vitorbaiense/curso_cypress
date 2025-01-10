@@ -4,11 +4,11 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get('[data-test="submit-button"]').click();
 });
 
-Cypress.Commands.add('cadastrar', (nome, email, password, confirm_password) => {
+Cypress.Commands.add('cadastrar', (nome, email, password) => {
     cy.get('input[name="nome"]').type(nome);
     cy.get('input[name="email"]').type(email);
     cy.get('input[name="password"]').type(password);
-    cy.get('input[name="confirm_password"]').type(confirm_password);
+    cy.get('input[name="confirm_password"]').type(password);
     cy.contains('button', 'Cadastrar').click();
 });
 
