@@ -3,8 +3,8 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   projectId: "v6awg6",
   e2e: {
-    // supportFile: "cypress/support/e2e.js",
-    supportFile: false,
+    supportFile: "support/e2e.js",
+    // supportFile: false,
   },
   // reporter: 'mochawesome',
   //   reporterOptions: {
