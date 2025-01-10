@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-10T20:49:39.852Z",
+    "end": "2025-01-10T20:49:57.400Z",
+    "duration": 17548,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2b429374-9651-4cf2-8eb4-fb01c9e3a1a5",
+      "title": "",
+      "fullFile": "cypress/e2e/pratica1.cy.js",
+      "file": "cypress/e2e/pratica1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "56fb4204-eba7-46f9-9374-3a39c9d04579",
+          "title": "acessando diferentes páginas do ADOPET",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve acessar a página inicial e clicar no botão \"Ver pets disponíveis para adoção”, Visite a página de principal do AdoPet e teste os botões header, Visite a página de /login do Adopet, Visite a página de /home do Adopet, Visite a página de /home do AdoPet e clique no botão “Falar com o responsável”",
+              "fullTitle": "acessando diferentes páginas do ADOPET Deve acessar a página inicial e clicar no botão \"Ver pets disponíveis para adoção”, Visite a página de principal do AdoPet e teste os botões header, Visite a página de /login do Adopet, Visite a página de /home do Adopet, Visite a página de /home do AdoPet e clique no botão “Falar com o responsável”",
+              "timedOut": null,
+              "duration": 16240,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(2000);\ncy.get('a[href=\"/\"]').click();\ncy.wait(2000);\ncy.get('a[href=\"/mensagem\"').click();\ncy.wait(2000);\ncy.get('a[href=\"/\"]').click();\ncy.contains('a', 'Fazer login').click();\n// cy.login('email', 'senha');\n// cy.get('input[name=\"email\"]').type('vitorbaiense@gmail.com');\n// cy.get('input[name=\"password\"]').type('Vitor1234');\ncy.contains('button', 'Entrar').click();\ncy.wait(4000);\ncy.get('div[class=\"card\"]').contains('a', 'Falar com responsável').click();\n//cy.contains('card').children('h4','Yoda').should('a', 'Falar com responsável').click(); / tentantiva de selecionar o botão de falar com responsável do Yoda, e não o primeiro botão.",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div[class=\"card\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div[class=\"card\"]`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/pratica1.cy.js:20:9)",
+                "diff": null
+              },
+              "uuid": "8cbc3daf-f837-435c-ab19-4a03ecc97176",
+              "parentUUID": "56fb4204-eba7-46f9-9374-3a39c9d04579",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8cbc3daf-f837-435c-ab19-4a03ecc97176"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 16240,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "curso_cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

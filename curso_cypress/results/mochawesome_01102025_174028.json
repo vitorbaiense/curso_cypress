@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-10T20:40:26.102Z",
+    "end": "2025-01-10T20:40:28.793Z",
+    "duration": 2691,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e02b8c19-0b3a-4c47-8053-ecfca5cd7140",
+      "title": "",
+      "fullFile": "cypress/e2e/login-correto.cy.js",
+      "file": "cypress/e2e/login-correto.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a6d7066c-0130-4d7c-909f-c788ab441b7c",
+          "title": "Página de login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve preencher os campos do login corretamente e autenticar o usuário na página",
+              "fullTitle": "Página de login Deve preencher os campos do login corretamente e autenticar o usuário na página",
+              "timedOut": null,
+              "duration": 1341,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('vitorbaiense@gmail.com', 'Vitor1234');\n// cy.get('[data-test=\"input-loginEmail\"]').type('vitorbaiense@gmail.com');\n// cy.get('[data-test=\"input-loginPassword\"]').type('Vitor1234');\n// cy.get('[data-test=\"submit-button\"]').click();",
+              "err": {},
+              "uuid": "18247de6-6e71-4e17-a4d5-cf52688f46bb",
+              "parentUUID": "a6d7066c-0130-4d7c-909f-c788ab441b7c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "18247de6-6e71-4e17-a4d5-cf52688f46bb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1341,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "curso_cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
