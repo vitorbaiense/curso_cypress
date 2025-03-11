@@ -12,8 +12,9 @@ describe('Verificação de texto sobre a pagina inicial AdoPet', () => {
 
     it('Deve acessar a página, clicar no botão de ícone da mensagem no na header e realizar o login corretamente', () => {
         cy.get('.header__message').click();
-        cy.get('input[name="email"]').type('vitorbaiense@gmail.com');
-        cy.get('input[name="password"]').type('Vitor1234');
+        cy.login('vitorbaiense@gmail.com', 'Vitor1234');
+        // cy.get('input[name="email"]').type('vitorbaiense@gmail.com');
+        // cy.get('input[name="password"]').type('Vitor1234');
         cy.get('[data-test="submit-button"]').click();
     })
   })
