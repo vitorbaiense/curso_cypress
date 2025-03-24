@@ -5,6 +5,6 @@ describe('Verificação de imagens do ADOPET', () => {
     });
   
     it('Deve acessar a página home e conferir se as imagens estão aparecendo corretamente na tela', () => {
-      
+      cy.get('.cards').should('be.visible');
     })
   })
