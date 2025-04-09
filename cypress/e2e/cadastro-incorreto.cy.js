@@ -19,7 +19,7 @@ describe('Página de cadastro do ADOPET', () => {
 
     it('Deve falhar mesmo que os campos sejam preenchidos corretamente', () => {
       cy.login('vitorsadad@gmail.com', 'Vitor5493');
-      cy.wait(@stubPost);
+      cy.wait('@stubPost');
       cy.contains('Falha no login. Consulte suas credenciais.').should('be.visible');
     })
 
