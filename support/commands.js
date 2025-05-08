@@ -12,6 +12,14 @@ Cypress.Commands.add('cadastrar', (nome, email, password) => {
     cy.contains('button', 'Cadastrar').click();
 });
 
+Cypress.Commands.add('login_webpdv', () => {
+    cy.visit('http://msap-integrado.qa.simonettidev.com.br/webpdv/index.php?f_bln_sair=1');
+    cy.get('input[name="usuario"]').type('siderlane');
+    cy.get('input[name="senha"]').type('Simonetti@123');
+    cy.get('input[name="submit"]').click();
+
+});
+
 
 // ***********************************************
 // This example commands.js shows you how to
