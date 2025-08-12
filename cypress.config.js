@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
  module.exports = {
   e2e: {
-    baseUrl: 'http://mobile.webpdv.msap-integrado.qa.simonettidev.com.br/',
+    baseUrl: 'https://mobile.webpdv.msap-integrado.qa.simonettidev.com.br/',
     pageLoadTimeout: 120000 // 120 segundos
   }
 },
