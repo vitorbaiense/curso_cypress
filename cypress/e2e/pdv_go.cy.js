@@ -39,14 +39,17 @@ describe('Fluxo com redirect', () => {
 
     cy.intercept("POST", "**/app/pedidos/v2/produtos/servicos/buscar").as("buscarServicos");
 
-    cy.get('input[id="codigoProduto"]').type("001282");
+    cy.get('input[id="codigoProduto"]').type("34387080");
     cy.get('#form-buscar-produto button[type="submit"]').click();
 
     cy.get('input[type="radio"]').eq(0).click();
 
     cy.waitLongLoad("@buscarServicos");
 
+    //tela para selecionar e confirmar entrega do tipo retirado pelo cliente
     cy.get('button[id="ir-para-entrega-button"]').click();
     cy.get('input[id="selecionar-todos-itens"]').click();
+    cy.get('div[class="radio-toggle-button w-full"]').eq(3).click();
+    cy.get('button[id="btn-gravar-entrega"]').click();
   });
 });
