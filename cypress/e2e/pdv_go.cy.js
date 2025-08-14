@@ -2,7 +2,8 @@
 Cypress.Commands.add("waitLongLoad", (waitRef = null) => { 
   cy.get("#TB_load").should("be.visible"); 
   cy.wait(waitRef); 
-  cy.get("#TB_load").should("not.exist"); });
+  cy.get("#TB_load").should("not.exist"); 
+});
 
 describe('Fluxo com redirect', () => {
   beforeEach(() => {
