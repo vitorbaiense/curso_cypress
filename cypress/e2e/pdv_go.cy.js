@@ -11,7 +11,7 @@ describe('Fluxo com redirect', () => {
 
     // Executa login no domínio de OAuth
     cy.visit('https://oauth.msap-integrado.qa.simonettidev.com.br');
-    cy.get('#username').type('siderlane');
+    cy.get('#username').type('gustavo20');
     cy.get('#password').type('Simonetti@123', { log: false });
     cy.get('button[type="submit"]').click();
 
@@ -58,8 +58,12 @@ describe('Fluxo com redirect', () => {
     // cy.intercept("POST", "**/app/pedidos/v2/servicos").as("validarServicos");
     // cy.waitLongLoad("@validarServicos");
 
-    cy.intercept("GET", "**/app/pedidos/v2/pagamentos").as("telaPagamento");
-    cy.waitLongLoad("@telaPagamento");
-
+    // cy.intercept("GET", "**/app/pedidos/v2/pagamentos").as("telaPagamento");
+    // cy.waitLongLoad("@telaPagamento");
+    cy.get('#formaAtendimento').select('MS CREDITO');
+    cy.get('#numeroParcelas').select('10');
+    cy.get('button[id="calcular-parcelas-button"]').click();
+    cy.get('button[id="gravar-metodo-button"]').click();
+    cy.get('a[class="btn btn-success btn-block loading-feedback"]').click();
   });
 });
