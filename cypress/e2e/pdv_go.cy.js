@@ -6,6 +6,15 @@ Cypress.Commands.add("waitLongLoad", (waitRef = null) => {
 });
 
 describe('Fluxo com redirect', () => {
+
+  let cpfs;
+
+  before(() => {
+    cy.fixture("cpf_cartao_simonetti_ativo").then((data) => {
+      cpfs = data;
+    });
+  });
+
   beforeEach(() => {
     cy.viewport(393, 852);
 
@@ -28,7 +37,7 @@ describe('Fluxo com redirect', () => {
   it("Deve permitir login pelo mobile e realizar atendimento com cliente que possui cartão simonetti ativo", () => {
     cy.intercept("POST", "**/app/pedidos/v2/vincular-cliente").as("vincularCliente");
 
-    cy.get('input[id="cpfCnpj"]').type("00082022739");
+    cy.get('input[id="cpfCnpj"]').type(cpfs);
     cy.get("#formEscolherCliente").submit();
 
     cy.waitLongLoad("@vincularCliente");
@@ -41,8 +50,11 @@ describe('Fluxo com redirect', () => {
 
     cy.get('input[id="codigoProduto"]').type("34387080");
     cy.get('#form-buscar-produto button[type="submit"]').click();
-
     cy.get('input[type="radio"]').eq(0).click();
+
+    //alterar valor do produto para preço sugerido
+    cy.get('button[id="valor-item-dropdown"]').click();
+    cy.get('li[data-kit-index="2"]').click();
 
     cy.waitLongLoad("@buscarServicos");
 
