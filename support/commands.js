@@ -28,6 +28,13 @@ Cypress.Commands.add('login_webpdv_gama', () => {
 
 });
 
+Cypress.Commands.add("gerarTelefone", () => {
+  const ddd = Math.floor(11 + Math.random() * 88);
+  const numero = Math.floor(9900000000 + Math.random() * 99999999);
+
+  return `(${ddd}) ${numero.toString().slice(0,5)}-${numero.toString().slice(5)}`;
+});
+
 
 // ***********************************************
 // This example commands.js shows you how to
