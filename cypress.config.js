@@ -10,12 +10,12 @@ module.exports = defineConfig({
     // supportFile: false,
   },
 
-  // reporter: 'mochawesome',
-  // reporterOptions: {
-  //   reportDir: 'curso_cypress/results',
-  //   overwrite: false,
-  //   html: false,
-  //   json: true,
-  //   timestamp: "mmddyyyy_HHMMss" 
-  // }
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'curso_cypress/results',
+    overwrite: false,
+    html: false,
+    json: true,
+    timestamp: "mmddyyyy_HHMMss" 
+  }
 });

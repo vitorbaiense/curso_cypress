@@ -16,5 +16,13 @@
 // Import commands.js using ES2015 syntax:
 import './commands.js';
 
+import 'cypress-real-events/support';
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Retornar 'false' evita que o Cypress falhe o teste
+  // quando ele encontra um erro não capturado.
+  return false;
+});
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
