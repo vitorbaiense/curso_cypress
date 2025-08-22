@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   projectId: "v6awg6",
   e2e: {
-    baseUrl: 'https://mobile.webpdv.msap-integrado.qa.simonettidev.com.br/',
+    // baseUrl: 'https://mobile.webpdv.msap-integrado.qa.simonettidev.com.br/',
     pageLoadTimeout: 120000, // 120 segundos
     chromeWebSecurity: false,
     supportFile: "support/e2e.js",
@@ -13,8 +13,8 @@ module.exports = defineConfig({
   reporter: 'mochawesome',
   reporterOptions: {
     reportDir: 'curso_cypress/results',
-    overwrite: false,
-    html: false,
+    overwrite: true,
+    html: true,
     json: true,
     timestamp: "mmddyyyy_HHMMss" 
   }
