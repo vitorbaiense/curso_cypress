@@ -13,21 +13,21 @@ Cypress.Commands.add('cadastrar', (nome, email, password) => {
 });
 
 Cypress.Commands.add('login_webpdv_msap', () => {
-    cy.visit('http://msap-integrado.qa.simonettidev.com.br/webpdv/index.php?f_bln_sair=1');
-    cy.get('input[name="usuario"]').type('siderlane');
+    cy.viewport(1024, 768);
+
+    cy.visit('http://webpdv.msap-integrado.qa.simonettidev.com.br/webpdv/index.php?f_bln_sair=1');
+    cy.get('input[name="usuario"]').type('gustavo20');
     cy.get('input[name="senha"]').type('Simonetti@123');
     cy.get('input[name="submit"]').click();
-
 });
 
 Cypress.Commands.add('login_webpdv_gama', () => {
-    cy.viewport(1024, 768)
+    cy.viewport(1024, 768);
 
     cy.visit('http://gama.qa.simonettidev.com.br:8080/webpdv/index.php?f_bln_sair=1');
     cy.get('input[name="usuario"]').type('gustavo20');
     cy.get('input[name="senha"]').type('Simonetti@123');
     cy.get('input[name="submit"]').click();
-
 });
 
 Cypress.Commands.add("gerarTelefone", () => {
@@ -87,7 +87,7 @@ Cypress.Commands.add("pdvGoGama", () => {
 Cypress.Commands.add("pdvGoMsap", () => {
     cy.viewport(393, 852);
 
-    // cy.visit('https://oauth.msap-integrado.qa.simonettidev.com.br'); //msap
+    cy.visit('https://oauth.msap-integrado.qa.simonettidev.com.br'); //msap
     cy.get('#username').type('gustavo20');
     cy.get('#password').type('Simonetti@123', { log: false });
     cy.get('button[type="submit"]').click();
@@ -103,7 +103,12 @@ Cypress.Commands.add("pdvGoMsap", () => {
 });
 
 Cypress.Commands.add('descartaPedidoFilaAtendimento', () => {
+    cy.intercept('GET', '**/webpdv/vendas/fila_atendimento**').as('carregarFilaAtendimento');
+
     cy.get('#menuone > :nth-child(3)').click().realHover('').get('a').contains('Fila de Atendimento').click({ force: true });
+
+    cy.wait('@carregarFilaAtendimento');
+
     cy.get('.hide > img').realHover('').click({ force: true }).get('.analisar_pedido').click();
     cy.get('#descartar').click();
     cy.on('window:confirm', (str) => {
