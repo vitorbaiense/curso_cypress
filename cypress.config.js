@@ -8,14 +8,17 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     supportFile: "support/e2e.js",
     // supportFile: false,
+    // video: true,             // <-- ativa gravação de vídeo
+    videosFolder: "curso_cypress/videos", // pasta onde os vídeos ficam salvos
+    screenshotOnRunFailure: true    // salva print em caso de falha
   },
 
   reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: '/curso_cypress/curso_cypress/results',
-    overwrite: true,
-    html: true,
-    json: true,
-    timestamp: "mmddyyyy_HHMMss" 
-  }
+  // reporterOptions: {
+  //   reportDir: 'curso_cypress/results',
+  //   overwrite: true,
+  //   html: true,
+  //   json: true,
+  //   timestamp: "mmddyyyy_HHMMss" 
+  // }
 });
