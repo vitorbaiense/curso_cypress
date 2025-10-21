@@ -48,6 +48,6 @@ it('verifica se a funcionalidade de filtrar tarefas funciona', () => {
         .first()
         .should('have.text', 'Walk the dog')
 
-      cy.contains('ay electric bill').should('not.exist')
+      cy.contains('Pay electric bill').should('not.exist')
 })
 });
