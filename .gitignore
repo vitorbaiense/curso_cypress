@@ -1,5 +1,6 @@
 # Ignorar dependências
-node_modules/
+node_modules
+cypress.env.json
 
 # Ignorar arquivos de execução
 cypress/screenshots/
